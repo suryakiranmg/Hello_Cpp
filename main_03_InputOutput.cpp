@@ -21,7 +21,7 @@ int main() {
     getline(std::cin, sNum2);
     
     // Convert from strings to int
-    // std::stod converts from strings to doubles
+    // std::stod converts from strings to integer
     int nNum1 = std::stoi(sNum1);
     int nNum2 = std::stoi(sNum2);
     
@@ -32,6 +32,7 @@ int main() {
     printf("%d / %d = %d\n", nNum1, nNum2, (nNum1 / nNum2));
     printf("%d %% %d = %d\n", nNum1, nNum2, (nNum1 % nNum2));
     
+ 
     // ----- PROBLEM : MILES TO KILOMETERS -----
     // Sample knowing that kilometers = miles * 1.60934
     // Enter Miles : 5
