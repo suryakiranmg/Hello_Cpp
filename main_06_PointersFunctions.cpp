@@ -76,9 +76,7 @@ void DoubleArray(int *arr, int size);
 int main() {
     
     // ----- FUNCTIONS -----
-    // Code that gets above 8 to 10 lines should be broken off
-    // into a separate function to better organize your code
-    // and to promote reuse
+    // Code that gets above 8 to 10 lines should be broken off into a separate function to better organize your code and to promote reuse
     
     double num1, num2;
     
@@ -97,8 +95,7 @@ int main() {
     // Undeclared identifier error
     // std::cout << name;
     
-    // Variables values changed in a function don't 
-    // translate globally
+    // Variables values changed in a function don't translate globally
     int age = 43;
     AssignAge(age);
     std::cout << "New Age " << age << "\n";
@@ -108,15 +105,12 @@ int main() {
     std::cout << "New Age " << age << "\n";
     
     // A Pointer stores a address in memory
-    // You declare a pointer to be of the same type as the data 
-    // type to which it points
-    // If you are storing the address of an int then the 
-    // pointer is an int
+    // You declare a pointer to be of the same type as the data type to which it points
+    // If you are storing the address of an int then the pointer is an int
     // When you declare a pointer give it a null value
     int* pAge = NULL;
     
-    // The reference operator returns the address for a 
-    // variable that can be stored in a pointer
+    // The reference operator returns the address for a variable that can be stored in a pointer
     pAge = &age;
     
     // Print the address Hexidecimal Number
@@ -125,8 +119,7 @@ int main() {
     // Get the value at that address with the dereference operator
     std::cout << "Value at Address : " << *pAge << "\n";
     
-    // We can create a pointer to an array and cycle through
-    // the data with ++ and --
+    // We can create a pointer to an array and cycle through the data with ++ and --
     int intArray[] = {1,2,3,4};
     int* pIntArray = intArray;
     
@@ -137,8 +130,7 @@ int main() {
     std::cout << "1st"
             " " << *pIntArray << " Address " << pIntArray << "\n";
     
-    // You can pass a pointer to a function and then the function
-    // can change that variables value globally
+    // You can pass a pointer to a function and then the function can change that variables value globally
     age = 43;
     
     // Send the address for age to the function
@@ -157,18 +149,15 @@ int main() {
 }
  
 // ----- FUNCTIONS -----
-// A function starts with the data type it will return or void
-// if no value is returned
-// You also list the data types for the parameters passed into 
-// a function and you may assign them default values
+// A function starts with the data type it will return or void if no value is returned
+// You also list the data types for the parameters passed into a function and you may assign them default values
  
  
 double AddNumbers(double num1 = 0, double num2 = 0){
     return num1 + num2;
 }
  
-// A variable created inside a function can't be accessed 
-// outside of it
+// A variable created inside a function can't be accessed outside of it
 void AssignName(){
     std::string name = "Derek";
 }
@@ -209,9 +198,7 @@ std::vector<int> Range(int start, int max, int step);
 int main() {
     
     // ----- PROBLEM CREATE A RANGE FUNCTION -----
-    // Create a function that receives a starting value,
-    // max value and an increment amount between
-    // values and receive a vector in return
+    // Create a function that receives a starting value, max value and an increment amount between values and receive a vector in return
     
     std::vector<int> range = Range(1, 10, 2);
     
