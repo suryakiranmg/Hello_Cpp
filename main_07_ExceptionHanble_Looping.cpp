@@ -12,11 +12,9 @@ std::vector<int> Range(int start,
 int main() {
     
 // ----- WHILE / BREAK / CONTINUE -----
-// While loops continue to run the code in them
-// as long as a condition is true
+// While loops continue to run the code in them as long as a condition is true
  
-// Create the variable used in the while condition
-// before the while loop
+// Create the variable used in the while condition before the while loop
 int i = 1;
  
 while (i <= 20){
@@ -25,14 +23,11 @@ while (i <= 20){
     if((i % 2) == 0){
         i += 1;
         
-        // Continue skips the rest of the code
-        // and jumps back to the beginning
-        // of the loop
+        // Continue skips the rest of the code and jumps back to the beginning of the loop
         continue;
     }
     
-    // Break stops execution of the loop and jumps 
-    // to the line after the loops closing }
+    // Break stops execution of the loop and jumps to the line after the loops closing }
     if(i == 15) break;
     
     std::cout << i << "\n";
@@ -44,9 +39,7 @@ while (i <= 20){
 // ----- END WHILE / BREAK / CONTINUE -----
  
 // ----- PROBLEM DRAW A PINE TREE -----
-// For this problem I want you to draw a pine 
-// tree after asking the user for the number 
-// of rows. Here is the sample program
+// For this problem I want you to draw a pine tree after asking the user for the number of rows. Here is the sample program
  
 /*
  How tall is the tree : 5
@@ -59,8 +52,7 @@ while (i <= 20){
  */
  
 /*
-I know that this is the number of spaces 
-and hashes for the tree
+I know that this is the number of spaces and hashes for the tree
 4 - 1
 3 - 3
 2 - 5
@@ -69,12 +61,9 @@ and hashes for the tree
 Spaces before stump = Spaces before top
  
 So I need to
-1. Decrement spaces by one each time through 
-the loop
-2. Increment the hashes by 2 each time through 
-the loop
-3. Save spaces to the stump by calculating 
-tree height - 1
+1. Decrement spaces by one each time through the loop
+2. Increment the hashes by 2 each time through the loop
+3. Save spaces to the stump by calculating tree height - 1
 4. Decrement from tree height until it equals 0
 5. Print spaces and then hashes for each row
 6. Print stump spaces and then 1 hash
@@ -83,8 +72,7 @@ tree height - 1
 std::cout << "How tall is the tree : ";
  
 // The top of the tree starts with 1 hash
-int treeHeight = 0, spaces = 0, hashes = 1,
-        stumpSpaces = 0; 
+int treeHeight = 0, spaces = 0, hashes = 1,stumpSpaces = 0; 
  
 std::cin >> treeHeight;
  
@@ -132,8 +120,7 @@ std::cout << "#";
 std::vector<int> Range(int start, int max, 
         int step){
     
-    // Every while statement needs an index 
-    // to start with
+    // Every while statement needs an index to start with
     int i = start;
     
     // Will hold returning vector
@@ -156,8 +143,7 @@ std::vector<int> Range(int start, int max,
 // ----- END PROBLEM DRAW A PINE TREE -----
  
 // ----- EXCEPTION HANDLING EX 1 -----
-    // Exceptions are errors that occur when things don't 
-    // go as expected. 
+    // Exceptions are errors that occur when things don't go as expected. 
     // 1. You expect and int and get a string
     // 2. You expect a file to be available and it isn't
     // 3. You expect the user to not enter 0 and they do
