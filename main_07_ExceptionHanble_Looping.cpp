@@ -139,18 +139,19 @@ std::vector<int> Range(int start, int max,
     return range;
     
 }
+
+
+
  
 // ----- END PROBLEM DRAW A PINE TREE -----
  
-// ----- EXCEPTION HANDLING EX 1 -----
+// -------------------------------------------------------- EXCEPTION HANDLING EX 1 ---------------------------------//
     // Exceptions are errors that occur when things don't go as expected. 
     // 1. You expect and int and get a string
     // 2. You expect a file to be available and it isn't
     // 3. You expect the user to not enter 0 and they do
     
-    // You try to execute code that could be troublesome
-    // and if an error occurs you catch it and throw
-    // it to another block of code for handling
+    // You try to execute code that could be troublesome and if an error occurs you catch it and throw it to another block of code for handling
     
     double num1 = 0, num2 = 0;
     
@@ -160,16 +161,19 @@ std::vector<int> Range(int start, int max,
     std::cin >> num2;
     
     try{
-        if(num2 == 0){
-            throw "Division by zero is not possible";
-        } else {
-        
-            printf("%.1f / %.1f = %.2f", num1, num2, 
-            (num1 / num2));
-        }
-    }
+		if(num2 == 0)
+		{
+		    throw "Division by zero is not possible";
+		} 
+		else 
+		{
+
+		    printf("%.1f / %.1f = %.2f", num1, num2, (num1 / num2));
+		}
+       }
     
-    catch(const char* exp){
+    catch(const char* exp)
+    {
         std::cout << "Error : " << exp << "\n";
     }
     
@@ -195,8 +199,7 @@ std::vector<int> Range(int start, int max,
                 exp.what() << "\n";
     }
     
-    // If exceptions aren't caught any place else 
-    // this will catch it
+    // If exceptions aren't caught any place else this will catch it
     catch(...){
         std::cout << "Default exception catch\n";
     }
@@ -204,13 +207,12 @@ std::vector<int> Range(int start, int max,
     
 // ----- END OF EXCEPTION HANDLING EX 2 -----
  
-// ----- DO WHILE LOOPS -----
- 
-	// Needed for the time function
-	#include <ctime>
+// -------------------------------------------- DO WHILE LOOPS -----------------------------//
+    // Needed for the time function
+    #include <ctime>
  
     // Do while loops are guaranteed to execute at least once
-    // We'll create a secret number guessing game
+    // We'll create a secret number guessing game 
     
     // Generate random number from 0 - 10
     
@@ -218,8 +220,7 @@ std::vector<int> Range(int start, int max,
     // time() returns the number of seconds since 1, 1, 1970
     srand(time(NULL));
     
-    // If you divide any number it is impossible to get a 
-    // remainder >= 11
+    // If you divide any number it is impossible to get a remainder >= 11
     int secretNum = std::rand() % 11;
     int guess = 0;
     
@@ -228,8 +229,8 @@ std::vector<int> Range(int start, int max,
         std::cout << "Guess the number : ";
         std::cin >> guess;
         
-        if(guess > secretNum) std::cout << "To Big\n";
-        if(guess < secretNum) std::cout << "To Small\n";
+        if(guess > secretNum) std::cout << "Too Big\n";
+        if(guess < secretNum) std::cout << "Too Small\n";
         
     } while(secretNum != guess);
     
@@ -238,7 +239,8 @@ std::vector<int> Range(int start, int max,
     
     // ----- END OF DO WHILE LOOPS -----
     
-    // ----- PROBLEM CREATE A DO WHILE LOOP WITH WHILE -----
+
+    // ----- PROBLEM CREATE A DO WHILE LOOP with WHILE -------------------//
     secretNum = std::rand() % 11;
     while(true){
         std::cout << "Guess the number : ";
