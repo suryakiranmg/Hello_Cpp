@@ -18,9 +18,7 @@ int main() {
     // Get array size (null is included)
     std::cout << "Array Size " << sizeof(cString) << "\n";
     
-    // C strings are troublesome because if you forget \0, or
-    // add to much information it can lead your program to crash,
-    // or for your system to crash
+    // C strings are troublesome because if you forget \0, or add to much information it can lead your program to crash, or for your system to crash
     
     // You can create a vector of strings
     std::vector<std::string> strVec(10);
@@ -110,9 +108,7 @@ int main() {
     std::cout << "Enter your string in uppercase : ";
     std::cin >> normalStr;
     
-    // Cycle through each character converting 
-    // them into ascii codes which are stored in
-    // a string
+    // Cycle through each character converting them into ascii codes which are stored in a string
     for(char c: normalStr)
         secretStr += std::to_string((int)c);
         // secretStr += std::to_string((int)c - 23);
@@ -145,8 +141,7 @@ int main() {
     // ----- END OF PROBLEM : SECRET STRING -----
     
     // ----- BONUS PROBLEM -----
-    // Allow the user to enter upper and lowercase
-    // letters by subtracting and adding 1 value
+    // Allow the user to enter upper and lowercase letters by subtracting and adding 1 value
     // ----- END OF BONUS PROBLEM -----
     
     return 0;
@@ -188,12 +183,10 @@ int main() {
             << "\n";
     
     // 2 * 2 * 2 = 8
-    std::cout << "log2(8) = " << std::log2(8) 
-            << "\n";
+    std::cout << "log2(8) = " << std::log2(8) << "\n";
     
     // 2 ^ 3
-    std::cout << "pow(2,3) = " << std::pow(2,3) 
-            << "\n";
+    std::cout << "pow(2,3) = " << std::pow(2,3) << "\n";
     
     // Returns what times itself equals the provided value
     std::cout << "sqrt(100) = " << std::sqrt(100) 
