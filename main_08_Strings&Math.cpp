@@ -10,8 +10,7 @@
  
 int main() {
  
-    // A C character string is an array of characters
-    // with a null character at the end \0
+    // A C character string is an array of characters with a null character at the end \0
     char cString[] = {'A', ' ', 'S', 't', 'r', 'i', 'n', 'g', '\0'};
     std::cout << cString << "\n";
     
