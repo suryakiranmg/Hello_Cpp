@@ -1,3 +1,5 @@
+
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -6,25 +8,16 @@
 #include <sstream>
  
 // Function Prototypes
-std::vector<std::string> StringToVector(std::string, 
-        char separator);
- 
-std::string VectorToString(std::vector<std::string>& vec,
-        char separator);
- 
+std::vector<std::string> StringToVector(std::string, char separator); 
+std::string VectorToString(std::vector<std::string>& vec, char separator);
 std::string TrimWhitespace(std::string);
- 
-std::vector<int> FindSubstringMatches(std::string theString,
-        std::string substring);
- 
-std::string ReplaceAllSubstrings(std::string theString,
-        std::string substring, std::string newString);
+std::vector<int> FindSubstringMatches(std::string theString, std::string substring);
+std::string ReplaceAllSubstrings(std::string theString, std::string substring, std::string newString);
  
 int main() {
     
     // ----- 1. CONVERT STRING TO VECTOR -----
-    // Create a function that receives a string and separator
-    // and returns a string vector
+    // Create a function that receives a string and separator and returns a string vector
     std::string sSentence = "This is a random string";
     
     // Create a vector
