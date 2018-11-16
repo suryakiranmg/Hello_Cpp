@@ -17,14 +17,14 @@ int main() {
     // Get array size (null is included)
     std::cout << "Array Size " << sizeof(cString) << "\n";
     
-    // C strings are troublesome because if you forget \0, or add to much information it can lead your program to crash, or for your system to crash
+    // C strings are troublesome because if you forget \0, or add too much information it can lead your program to crash, or for your system to crash
     
-    // You can create a vector of strings
+    //--- You can create a vector of c++ strings (better way)
     std::vector<std::string> strVec(10);
     
     // C++ std::string can grow in size and is much safer
     std::string str("I'm a string");
-    strVec[0] = str;
+    strVec[0] = str; // Put it into vector
     
     // You can access characters with an index
     std::cout << str[0] << "\n";
@@ -32,16 +32,19 @@ int main() {
     // You can also use at()
     std::cout << str.at(0) << "\n";
     
-    // Front returns first char and back returns last
+    // Front returns first char and back returns last char
     std::cout << str.front() << " " << str.back() << "\n";
     
     // Get the string length
     std::cout << "Length : " << str.length() << "\n";
     
-    // You can copy a string to another
+    // You can copy a string to another string this way
     std::string str2(str);
     strVec[1] = str2;
     
+    for(auto y:strVec)
+     std::cout<<y<<"\n"; //shows 1st string and 2nd string
+ 
     // You can copy after the 1st 4 characters
     std::string str3(str, 4);
     strVec[2] = str3;
@@ -58,65 +61,59 @@ int main() {
     str.append(str, 34, 37);
     strVec[5] = str;
     
-    // Erase characters from a string from an index to another
-    // or the last
+    // Erase characters from a string from an index to another or the last index
     str.erase(13, str.length() - 1);
     strVec[6] = str;
     
     for(auto y: strVec)
         std::cout << y << "\n";
     
-    // find() returns index where pattern is found
-    // or npos
+    // find() returns index where pattern is found or npos
     if(str.find("string") != std::string::npos)
-        std::cout << "1st not " << str.find("string") << "\n";
+        std::cout << "1st index is " << str.find("string") << "\n";
     
-    // substr(x, y) returns a substring starting at
-    // index x with a length of y
+    // substr(x, y) returns a substring starting at index x with a length of y
     std::cout << "Substr " << str.substr(6,6) << "\n";
     
-    // Reverse a string by passing the beginning and end
-    // of a string
+    // Reverse a string by passing the beginning and end of a string
     reverse (str.begin(), str.end());
     std::cout << "Reverse " << str << "\n";
     
-    // Case conversion
+    // Lower/Upper Case conversion
     transform(str2.begin(), str2.end(), str2.begin(), ::toupper);
     std::cout << "Upper " << str2 << "\n";
     transform(str2.begin(), str2.end(), str2.begin(), ::tolower);
     std::cout << "Lower " << str2 << "\n";
     
-    // You can get the ascii code for a char by saving
-    // the char as an int or with (int)
-    // a - z : 97 - 122
+    // You can get the ascii code for a char by saving the char as an int or with (int)
+    // a - z : 97 - 122   //has 3 digits
     // A - Z : 65 - 90
     char aChar = 'Z';
     int aInt = aChar;
-    std::cout << "A Code " << (int)'a' << "\n";
+    std::cout << "A Code is " << (int)'a' << "\n";
     
     // Convert int to string
     std::string strNum = std::to_string(1+2);
     std::cout << "String " << strNum << "\n";
     
-    // ----- PROBLEM : SECRET STRING -----
-    // Receive an uppercase string and hide its meaning
-    // by turning it into ascii codes
+    // ------------------------------- PROBLEM : SECRET STRING -----
+    // Receive an uppercase string and hide its meaning by turning it into ascii codes
     // Translate it back to the original letters
     
     std::string normalStr, secretStr = "";
-    std::cout << "Enter your string in uppercase : ";
+    std::cout << "Enter your string in uppercase : "; //to have 2 digits representing each char
     std::cin >> normalStr;
     
     // Cycle through each character converting them into ascii codes which are stored in a string
     for(char c: normalStr)
         secretStr += std::to_string((int)c);
-        // secretStr += std::to_string((int)c - 23);
+        // secretStr += std::to_string((int)c - 23); //To make it a 2 digit number
     
-    std::cout << "Secret : " << secretStr << "\n";
+    std::cout << "Secret Message: " << secretStr << "\n";
     
     normalStr = "";
     
-    // Cycle through numbers in string 2 at a time
+    // Cycle through numbers in string 2 at a time (each char is represented by 2 digits)
     for(int i = 0; i < secretStr.length(); i += 2){
         
         // Get the 2 digit ascii code
@@ -135,21 +132,24 @@ int main() {
         normalStr += chCharCode;
     }
     
-    std::cout << "Original : " << normalStr << "\n";
+    std::cout << "Original Message : " << normalStr << "\n";
     
-    // ----- END OF PROBLEM : SECRET STRING -----
+    // ------------------------------ END OF PROBLEM : SECRET STRING -------------------------//
     
-    // ----- BONUS PROBLEM -----
+ 
+    // -------------------------------------- BONUS PROBLEM -----------------------------//
     // Allow the user to enter upper and lowercase letters by subtracting and adding 1 value
-    // ----- END OF BONUS PROBLEM -----
+    // ----- END OF BONUS PROBLEM -----  value is 23
     
     return 0;
     
 }
  
-// ----- END OF STRING TUTORIAL ——
+///////---------------------------------- END OF STRING TUTORIAL ——--------------------------------//////
  
-// ----- MATH FUNCTIONS -----
+
+
+// ----------- MATH FUNCTIONS -----//
 // C++ has numerous math functions
 // http://en.cppreference.com/w/cpp/numeric/math
  
@@ -158,15 +158,15 @@ int main() {
  
 int main() {
     
-    std::cout << "abs(-10) = " << std::abs(-10) << "\n";
+    std::cout << "abs value(-10) = " << std::abs(-10) << "\n";
     
-    std::cout << "max(5,4) = " << std::max(5,4) << "\n";
+    std::cout << "max value(5,4) = " << std::max(5,4) << "\n";
     
-    std::cout << "min(5,4) = " << std::min(5,4) << "\n";
+    std::cout << "min value(5,4) = " << std::min(5,4) << "\n";
     
-    std::cout << "fmax(5.3,4.3) = " << std::fmax(5.3,4.3) << "\n";
+    std::cout << "fmax value(5.3,4.3) = " << std::fmax(5.3,4.3) << "\n";
     
-    std::cout << "fmin(5.3,4.3) = " << std::fmin(5.3,4.3) << "\n";
+    std::cout << "fmin value(5.3,4.3) = " << std::fmin(5.3,4.3) << "\n";
     
     // e ^ x
     std::cout << "exp(1) = " << std::exp(1) << "\n";
@@ -178,8 +178,7 @@ int main() {
     std::cout << "log(20.079) = " << std::log(20.079) << "\n";
     
     // 10 * 10 * 10 = 1000, so log10(1000) = 3
-    std::cout << "log10(1000) = " << std::log10(1000) 
-            << "\n";
+    std::cout << "log10(1000) = " << std::log10(1000) << "\n";
     
     // 2 * 2 * 2 = 8
     std::cout << "log2(8) = " << std::log2(8) << "\n";
@@ -188,30 +187,23 @@ int main() {
     std::cout << "pow(2,3) = " << std::pow(2,3) << "\n";
     
     // Returns what times itself equals the provided value
-    std::cout << "sqrt(100) = " << std::sqrt(100) 
-            << "\n";
+    std::cout << "sqrt(100) = " << std::sqrt(100) << "\n";
     
     // What cubed equals the provided
-    std::cout << "cbrt(1000) = " << std::cbrt(1000) 
-            << "\n";
+    std::cout << "cbrt(1000) = " << std::cbrt(1000) << "\n";
     
     // Hypotenuse : SQRT(A^2 + B^2)
-    std::cout << "hypot(2,3) = " << std::hypot(2,3) 
-            << "\n";
+    std::cout << "hypot(2,3) = " << std::hypot(2,3) << "\n";
     
-    std::cout << "ceil(10.45) = " << std::ceil(10.45) 
-            << "\n";
+    std::cout << "ceil(10.45) = " << std::ceil(10.45) << "\n";
     
-    std::cout << "floor(10.45) = " << std::floor(10.45) 
-            << "\n";
+    std::cout << "floor(10.45) = " << std::floor(10.45) << "\n";
     
-    std::cout << "round(10.45) = " << std::round(10.45) 
-            << "\n";
+    std::cout << "round(10.45) = " << std::round(10.45) << "\n";
     
-    // Also sin, cos, tan, asin, acos, atan, atan2,
-    // sinh, cosh, tanh, asinh, acosh, atanh
+    // Also sin, cos, tan, asin, acos, atan, atan2, sinh, cosh, tanh, asinh, acosh, atanh
     
     return 0;
 }
  
-// ----- END OF MATH FUNCTIONS -----
+// ------------------------------------------ END OF MATH FUNCTIONS --------------------//
