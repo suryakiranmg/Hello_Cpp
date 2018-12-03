@@ -23,9 +23,9 @@ int main() {
     // Create a vector
     std::vector<std::string> vec = StringToVector(sSentence, ' ');
     
-    // Cycle through each index in the vector and print
-    // out each word 
-    for(int i = 0; i < vec.size(); ++i){
+    // Cycle through each index in the vector and print out each word 
+    for(int i = 0; i < vec.size(); ++i)
+    {
         std::cout << vec[i] << "\n";
     }
     // ----- END PROBLEM CONVERT STRING TO VECTOR -----
@@ -33,7 +33,7 @@ int main() {
     // ----- 2. PROBLEM CONVERT VECTOR TO STRING -----
     std::vector<std::string> vCusts(3);
     vCusts[0] = "Bob";
-    vCusts[1] = "Sue";
+    vCusts[1] = "Kiran";
     vCusts[2] = "Tom";
     
     std::string sCusts = VectorToString(vCusts, ' ');
@@ -50,19 +50,19 @@ int main() {
     
     // ----- END STRIP WHITESPACE -----
     
-    // ----- 4. PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR -----
+    // ----- 4. PROBLEM FIND ALL INDEX MATCHES  & RETURN VECTOR -----
     std::string phrase = "To be or not to be";
     
     std::vector<int> matches = FindSubstringMatches(phrase, "be");
     
-    for(int i = 0; i < matches.size(); ++i){
+    for(int i = 0; i < matches.size(); ++i)
+    {
         std::cout << matches[i] << "\n";
     }
     // ----- END PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR -----
     
     // ----- 5. PROBLEM REPLACE ALL SUBSTRINGS -----
-    std::cout << ReplaceAllSubstrings("to know or not to know",
-            "know", "be") << "\n";        
+    std::cout << ReplaceAllSubstrings("to know or not to know", "know", "be") << "\n";        
             
     // ----- END PROBLEM REPLACE ALL SUBSTRINGS -----
     
@@ -71,18 +71,12 @@ int main() {
     char num3 = '3';
     char aSpace = ' ';
     
-    std::cout << "Is z a letter or number " << 
-            isalnum(letterZ) << "\n";
-    std::cout << "Is z a letter " << 
-            isalpha(letterZ) << "\n";
-    std::cout << "Is z uppercase " << 
-            isupper(letterZ) << "\n";
-    std::cout << "Is z lowercase " << 
-            islower(letterZ) << "\n";
-    std::cout << "Is 3 a number " << 
-            isdigit(num3) << "\n";
-    std::cout << "Is space a space " << 
-            isspace(aSpace) << "\n";
+    std::cout << "Is z a letter or number " << isalnum(letterZ) << "\n";
+    std::cout << "Is z a letter " << isalpha(letterZ) << "\n";
+    std::cout << "Is z uppercase " << isupper(letterZ) << "\n";
+    std::cout << "Is z lowercase " << islower(letterZ) << "\n";
+    std::cout << "Is 3 a number " << isdigit(num3) << "\n";
+    std::cout << "Is space a space " << isspace(aSpace) << "\n";
     
     // ----- END CHARACTER FUNCTIONS -----
     
@@ -90,39 +84,35 @@ int main() {
     
 }
  
-// ----- 1. CONVERT STRING TO VECTOR -----
-std::vector<std::string> StringToVector(std::string, 
-        char separator){
+// ----- 1. CONVERT STRING TO VECTOR FUNCTION -----
+std::vector<std::string> StringToVector(std::string,char separator){
     std::string sSentence = "This is a random string";
     
     // Create a vector
     std::vector<std::string> vecsWords;
     
-    // A stringstream object receives strings separated
-    // by a space and then spits them out 1 by 1
+    // A stringstream object receives strings separated by a space and then spits them out 1 by 1
     std::stringstream ss(sSentence);
     
     // Will temporarily hold each word in the string
     std::string sIndivStr;
     
-    // While there are more words to extract keep
-    // executing
+    // While there are more words to extract keep executing
     // getline takes strings from a stream of words stored
     // in the stream and each time it finds a blanks space
     // it stores the word proceeding the space in sIndivStr
     while(getline(ss, sIndivStr, separator)){
-        
         // Put the string into a vector
         vecsWords.push_back(sIndivStr);
     }
     
     return vecsWords;
 }
-// ----- END CONVERT STRING TO VECTOR -----
+// ----- END CONVERT STRING TO VECTOR FUNCTION-----
  
-// ----- 2. PROBLEM CONVERT VECTOR TO STRING -----
-std::string VectorToString(std::vector<std::string>& vec,
-        char separator){
+// ----- 2. PROBLEM CONVERT VECTOR TO STRING FUNCTION -----
+std::string VectorToString(std::vector<std::string>& vec,char separator)
+{
     
     std::string theString = "";
     for(auto cust: vec)
@@ -131,13 +121,13 @@ std::string VectorToString(std::vector<std::string>& vec,
     return theString;
     
 }
-// ----- END PROBLEM CONVERT VECTOR TO STRING -----
+// ----- END PROBLEM CONVERT VECTOR TO STRING FUNCTION -----
  
-// ----- 3. STRIP WHITESPACE -----
-std::string TrimWhitespace(std::string theString){
-    // find_last_not_of finds the last character
-    // that doesn't match a list of defined characters
-    std::string whitespaces(" \t\f\n\r");
+// ----- 3. STRIP WHITESPACE FUNCTION -----
+std::string TrimWhitespace(std::string theString)
+{
+    // 'find_last_not_of' finds the last character that doesn't match a list of defined characters
+    std::string whitespaces(" \t\f\n\r"); //space, tab, ,new line,,
     theString.erase(theString.find_last_not_of(whitespaces) + 1);
     
     // find_first_not_of does the same for the front of the string
@@ -145,18 +135,19 @@ std::string TrimWhitespace(std::string theString){
     
     return theString;
 }
-// ----- END STRIP WHITESPACE -----
+// ----- END STRIP WHITESPACE FUNCTION-----
  
-// ----- 4. PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR -----
-std::vector<int> FindSubstringMatches(std::string theString,
-        std::string substring){
+// ----- 4. PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR FUNCTION-----
+std::vector<int> FindSubstringMatches(std::string theString, std::string substring)
+{
     std::vector<int> matchingIndexes;
     
     // Check for matching substring
     int index = theString.find(substring, 0);
     
     // Keep adding indexes until none are left
-    while(index != std::string::npos){
+    while(index != std::string::npos)
+    {
         matchingIndexes.push_back(index);
         index = theString.find(substring, index + 1);
     }
@@ -164,15 +155,14 @@ std::vector<int> FindSubstringMatches(std::string theString,
     return matchingIndexes;
 }
  
-// ----- END PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR -----
+// ----- END PROBLEM FIND ALL INDEX MATCHES RETURN VECTOR FUNCTION -----
  
-// ----- 5. PROBLEM REPLACE ALL SUBSTRINGS -----
-std::string ReplaceAllSubstrings(std::string theString,
-        std::string substring, std::string newString){
+// ----- 5. PROBLEM REPLACE ALL SUBSTRINGS FUNCTION-----
+std::string ReplaceAllSubstrings(std::string theString, std::string substring, std::string newString)
+{
     
     // Get a vector that contains all matching indexes
-    std::vector<int> matches = FindSubstringMatches(theString, 
-            substring);
+    std::vector<int> matches = FindSubstringMatches(theString, substring);
     
     if(matches.size() != 0){
         // Get size difference between substring and newString
@@ -181,10 +171,9 @@ std::string ReplaceAllSubstrings(std::string theString,
         // Times through loop
         int timesLooped = 0;
          
-        for(auto index: matches){
-            theString.replace(index + (timesLooped * lengthDifference),
-                    substring.size(),
-                    newString);
+        for(auto index: matches)
+        {
+            theString.replace(index + (timesLooped * lengthDifference), substring.size(), newString);
             timesLooped++;
         }
     }
@@ -192,4 +181,4 @@ std::string ReplaceAllSubstrings(std::string theString,
     return theString;
     
 }
-// ----- END PROBLEM REPLACE ALL SUBSTRINGS -----
+// ----- END PROBLEM REPLACE ALL SUBSTRINGS FUNCTION-----
