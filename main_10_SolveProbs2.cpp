@@ -2,7 +2,8 @@
 std::string CaesarCipher(std::string theString, int key, 
         bool encrypt);
  
-int main() {
+int main() 
+{
     
     std::string theString = "Make me secret";
     
@@ -20,8 +21,8 @@ int main() {
     
 }
  
-std::string CaesarCipher(std::string theString, int key, 
-        bool encrypt){
+std::string CaesarCipher(std::string theString, int key,bool encrypt)
+{
     std::string returnString = "";
     int charCode = 0;
     char letter;
@@ -88,8 +89,7 @@ std::string CaesarCipher(std::string theString, int key,
  
 // ----- 1. PROBLEM : SOLVE FOR X -----
  
-std::vector<std::string> StringToVector(std::string theString, 
-        char separator);
+std::vector<std::string> StringToVector(std::string theString,char separator);
         
 void SolveForX(std::string equation);
  
