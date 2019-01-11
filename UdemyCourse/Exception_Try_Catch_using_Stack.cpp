@@ -1,5 +1,4 @@
 #include <iostream>
-#include<exception>
 using namespace std;
 
 class StackOverFlow: exception{};
