@@ -57,7 +57,7 @@ int main()
     forward_list<int> v={2,4,6,8,10};
     v.push_front(20);
     v.push_front(30);
-   // v.pop_back(); //no push back in forward list
+    v.pop_front(); //no push_back or push_front in forward list
     
     forward_list<int>::iterator i;
     
