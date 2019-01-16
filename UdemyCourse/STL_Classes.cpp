@@ -69,7 +69,31 @@ int main()
     for(auto x:v)
         cout<<x<<endl;
     }
-        
+
+//--------------------------- SET --------------------------------//   
+#include<iostream>
+#include<set>
+using namespace std;
+
+int main()
+{
+    set<int> v={2,4,6,8,10,10};
+    v.insert(20);
+    v.insert(30);
+    v.erase(20); //no push_back or push_front in forward list
+    
+    set<int>::iterator itr;
+    
+    cout<<"Using iterator"<<endl;
+    for(itr=v.begin(); itr != v.end(); itr++)
+        cout<<*itr<<endl;         //can't use ++*itr for container SET
+
+    cout<<"Using for_each_loop"<<endl;
+    for(auto x:v)
+        cout<<x<<endl;
+    }
+
+
 //--------------------------MAP(hash table)-------------------//        
 #include<iostream>
 #include<map>
