@@ -25,5 +25,14 @@ int main()
     
     cout<<ptr<<endl;
     
+    // Function Pointer -- runtime polymorphism
+    // One function ptr can point to any function with the same signature
+    int (*suki)(int, int);
+    suki = max;
+    cout<<"Max: "<<(*suki)(10,5)<<endl;
+    suki = min;
+    (suki) = min;
+    cout<<"Min: "<<(*suki)(10,5)<<endl;
+    
 }
 
