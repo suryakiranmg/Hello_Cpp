@@ -339,9 +339,9 @@ int main()
     arr2.Append(3); arr2.Append(5); arr2.Append(14);arr2.Append(20);
     cout<<"Array2 is :"; arr2.Display();
     //Search
-        //  (arr.LinearSearch(14)==-1)?cout<<"14 Not Present"<<endl:cout<<"14 present at "<<arr.LinearSearch(14)<<endl;
-        //  (arr.BinarySearch(98)==-1)?cout<<"98 Not Present"<<endl:cout<<"98 present at "<<arr.BinarySearch(98)<<endl;
-        //  (arr.BinarySearch(20)==-1)?cout<<"20 Not Present"<<endl:cout<<"98 present at "<<arr.BinarySearch(20)<<endl;
+        // (arr.LinearSearch(14)==-1)?cout<<"14 Not Present"<<endl:cout<<"14 present at "<<arr.LinearSearch(14)<<endl;
+        // (arr.BinarySearch(98)==-1)?cout<<"98 Not Present"<<endl:cout<<"98 present at "<<arr.BinarySearch(98)<<endl;
+        // (arr.BinarySearch(20)==-1)?cout<<"20 Not Present"<<endl:cout<<"98 present at "<<arr.BinarySearch(20)<<endl;
     //Get, Set, Max, Min, Sum, Avg
         //   arr.Set(1,33);
         //   cout<<"Value at index 1 is "<<arr.Get(1)<<endl;
