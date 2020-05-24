@@ -1,4 +1,4 @@
-/// ARRAY ADT -- Array Class in C++
+/// ARRAY ADT -- Array Class in C++-------------------
 #include<iostream>
 using namespace std;
 
