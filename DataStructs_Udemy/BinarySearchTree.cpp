@@ -1,4 +1,6 @@
 #include <iostream>
+#include<stack>
+#include<limits.h>
 using namespace std;
 
 class Node
@@ -23,11 +25,13 @@ class BST
      
      Node* R_Insert(Node* p, int key);
      Node* R_Search(Node* p, int key);
-     Node* Delete(Node* p, int key);
      
+     Node* Delete(Node* p, int key);
      int Height(Node* p);
      Node* InPredecessor(Node* p);
      Node* InSuccessor(Node* p);
+     
+     void CreateFromPreOrder(int *pre, int n);
 };
 
 void BST::Insert(int key)
@@ -147,6 +151,39 @@ Node* BST::Delete(Node* p, int key)
     return p;
 }
 
+void BST::CreateFromPreOrder(int *pre, int n)
+{
+    int i=0;
+    root = new Node;
+    root->data = pre[i++]; root->lchild = root->rchild = nullptr;
+    
+    Node* t;
+    Node* p = root;
+    stack<Node*> stk;
+    while(i<n)
+    {
+        if(pre[i] < p->data)
+        {
+            t = new Node;
+            t->data = pre[i++]; t->lchild = t->rchild = nullptr;
+            p->lchild = t;
+            stk.push(p);
+            p=t;
+        }
+        else if(pre[i] > p->data && pre[i]<(stk.empty() ? INT_MAX : stk.top()->data))
+        {
+            t= new Node;
+            t->data = pre[i++]; t->lchild = t->rchild = nullptr;
+            p->rchild = t;
+            p=t;
+        }
+        else 
+        {
+            p= stk.top();
+            stk.pop();
+        }
+    }
+}
 
 int main()
 {
@@ -172,6 +209,12 @@ int main()
     
     bst.Delete(bst.getRoot(),33);                       // Delete
     bst.Inorder(bst.getRoot());
+    
+    BST b;
+    int pre[]={30,20,10,15,25,40,50,45};
+    b.CreateFromPreOrder(pre,sizeof(pre)/sizeof(pre[0]));
+    cout<<endl;
+    b.Inorder(b.getRoot());
 
     return 0;
 }
