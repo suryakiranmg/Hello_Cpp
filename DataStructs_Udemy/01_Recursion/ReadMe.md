@@ -20,3 +20,12 @@ void Function (int n)\
 
 Recursion  - Ascending + Descending phases\
 Loop - Only ascending phase (== Tail Recursion)
+
+
+## Problems
+ - Sum
+ - Factorial
+ - Power
+ - taylor Series
+ - Fibonacci
+ - nCr
