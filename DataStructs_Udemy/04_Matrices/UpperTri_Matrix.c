@@ -2,8 +2,8 @@
 #include<stdlib.h>
 
 // NZ Elements = n x (n+1)/ 2
-// Row major Formula, Index (A[i][j]) = i(i-1)/ 2  +  (j-1)
-// Column major Formula, Index (A[i][j]) = n(j-1) - (j-2)(j-1)/ 2 + (i-j)
+// Lower Tri Row major Formula, Index (A[i][j]) = i(i-1)/ 2  +  (j-1)
+// Lower Tri Column major Formula, Index (A[i][j]) = n(j-1) - (j-2)(j-1)/ 2 + (i-j)
 
 
 struct UpperTri_Matrix
