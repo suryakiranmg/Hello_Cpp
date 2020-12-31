@@ -8,9 +8,9 @@ struct Matrix_Element
 
 struct Sparse_Matrix
 {
-    int m; //rows
-    int n; //columns
-    int num; // # NZ elements
+    int m;      // rows
+    int n;      // columns
+    int num;    // # NZ elements
     struct Matrix_Element* ele;
 };
 
@@ -51,6 +51,12 @@ struct Sparse_Matrix* Add_Sparse(struct Sparse_Matrix A, struct Sparse_Matrix B)
    struct Sparse_Matrix* Sum;
    Sum = (struct Sparse_Matrix*)malloc(sizeof(struct Sparse_Matrix));
    Sum->ele = (struct Matrix_Element*)malloc(sizeof(struct Matrix_Element)*(A.num + B.num));
+   
+   if(A.m != B.m || A.n != B.n)
+   {
+       printf("Dimension Mismatch!\n");
+       return Sum;
+   }
    
    int x=0, y=0,k=0;
    while(x<A.num && y<B.num)
