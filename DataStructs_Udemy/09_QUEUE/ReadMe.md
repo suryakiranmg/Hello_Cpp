@@ -1,4 +1,4 @@
-# Queue
+# Queue (FIFO)
 
 
 struct Queue\
@@ -18,3 +18,6 @@ struct Queue\
 
 
 ### Queue using Linked List
+
+
+### DEQueue (Double Ended Queue) - not FIFO - insert/delete from any side
