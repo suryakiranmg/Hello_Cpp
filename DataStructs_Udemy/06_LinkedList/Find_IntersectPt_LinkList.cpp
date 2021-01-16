@@ -74,7 +74,46 @@ void Find_Intersection_Point(struct Node *p, struct Node *q) //-----------------
         stk2.pop();
     }
     
-    cout<<"A & B Intersect at address "<<meet_pt<<" and value "<<meet_pt->data<<endl;
+    cout<<"METHOD 1: A & B Intersect at address "<<meet_pt<<" and value "<<meet_pt->data<<endl;
+}
+
+int Count_Nodes(struct Node *p)
+{
+    int count=0;
+    while(p)
+    {
+        p=p->next;
+        count++;
+    }
+    return count;
+}
+
+void Find_Intersection_Point_2(struct Node *p, struct Node *q) //----------------------------------------Find Intersection Point----Simpler (No extra memory needed)
+{
+    int a= Count_Nodes(p);
+    int b= Count_Nodes(q);
+    
+    while(a<b) //decrement b until a==b
+    {
+        q=q->next;
+        b--;
+    }
+    while(a>b) //decrement a until a==b
+    {
+        p=p->next;
+        a--;
+    }
+    while(p) // a==b
+    {
+        if(p==q)
+        {
+            cout<<"METHOD 2: A & B Intersect at address "<<p<<" and value "<<p->data<<endl;
+            return;
+        }
+        p=p->next;
+        q=q->next;
+    }
+    
 }
 
 int main()
@@ -98,6 +137,8 @@ int main()
     Display_LinkList(second); 
     
     Find_Intersection_Point(first,second);
+    
+    Find_Intersection_Point_2(first,second);
     
     return 0;
 }
