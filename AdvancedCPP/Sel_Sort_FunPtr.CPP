@@ -1,5 +1,5 @@
 #include <iostream>
-#include <utility> //for std::swap
+#include <utility> // for std::swap
 
 void SelectionSort ( int* arr, int size, bool(*ComparisonFun)(int, int) )
 {
@@ -19,6 +19,13 @@ void SelectionSort ( int* arr, int size, bool(*ComparisonFun)(int, int) )
 
 bool Ascending  (int x, int y) { return x>y; }
 bool Descending (int x, int y) { return x<y; }
+bool MyCompare  (int x, int y) //---------------Define Strange Compare Funs as well with Function Ptr
+{
+    if( x%2 == 0 && y%2 != 0 ) return false; // x even, y odd
+    if( x%2 != 0 && y%2 == 0 ) return true;  // x odd, y even
+    return Ascending (x,y); // if both even/odd, ascending order
+}
+
 
 void DisplayArray (int* arr, int size)
 {
@@ -32,17 +39,7 @@ int main()
     
     SelectionSort (arr,n,Descending); DisplayArray (arr,n);
     SelectionSort (arr,n,Ascending);  DisplayArray (arr,n);
+    SelectionSort (arr,n,MyCompare);  DisplayArray (arr,n);
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
